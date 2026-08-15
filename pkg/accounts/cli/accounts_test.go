@@ -43,6 +43,7 @@ func TestUsernamePasswordSanitation(t *testing.T) {
 			expectedErr error
 		}{
 			{"invalid_short", "pass", ErrInvalidNewPassword},
+			{"invalid_short_7_characters", "pass123", ErrInvalidNewPassword},
 			{"invalid_with_spaces", "password with spaces", ErrInvalidNewPassword},
 			{"invalid_non_latin_chars", "пароль", ErrInvalidNewPassword},
 			{"invalid_empty", "", ErrInvalidNewPassword},
